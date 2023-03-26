@@ -1,0 +1,29 @@
+@import "./base.css";
+
+#app {
+    min-height: 100vh;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    
+    font-weight: normal;
+}
+
+#nav {
+    height: 10vh;
+}
+
+#main {
+  height: 80vh;
+  max-width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+#content{
+  width: fit-content;
+}
+
+form{
+  min-width: 20vw;
+}
