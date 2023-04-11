@@ -1,19 +1,21 @@
-<script setup>
-import { RouterLink } from "vue-router"
-</script>
-
 <script>
 //https://www.bezkoder.com/vue-3-crud/#Run_Vuejs_3_CRUD_example
 import AccountService from "../services/AccountService";
+import { RouterLink } from "vue-router"
+import { useAccountStore } from "../stores/useAccountStore";
 
 export default {
     name: "login",
+    setup() {
+        const accountStore = useAccountStore()
+        return { accountStore }
+    },
     data() {
         return {
             accountRequest: {
                 email: "",
                 password: ""
-            }
+            },
         }
     },
     methods: {
@@ -24,10 +26,11 @@ export default {
             }
 
             AccountService.login(data).then(res => {
-                alert(res.data.email)
+                this.accountStore.login(res.data);
                 this.$router.push('/')
             }).catch(e => {
-                alert(e.response.data)
+                console.log(e)
+                alert("An error occured")
             })
         }
     }

@@ -1,5 +1,7 @@
 <script setup>
 import { RouterView } from "vue-router"
+import { useAccountStore } from "./stores/useAccountStore";
+const accountStore = useAccountStore()
 </script>
 
 <template>
@@ -15,11 +17,17 @@ import { RouterView } from "vue-router"
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
+                        <li class="nav-item" v-if="!accountStore.user">
                             <RouterLink to="/login" class="nav-link">Login</RouterLink>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" v-if="!accountStore.user">
                             <RouterLink to="/register" class="nav-link">Register</RouterLink>
+                        </li>
+                        <li class="nav-item" v-if="accountStore.user">
+                            <RouterLink to="/category" class="nav-link">Category</RouterLink>
+                        </li>
+                        <li class="nav-item float-end" v-if="accountStore.user">
+                            <RouterLink to="/cart" class="nav-link">Cart</RouterLink>
                         </li>
                     </ul>
                 </div>
