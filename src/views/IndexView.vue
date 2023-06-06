@@ -10,5 +10,10 @@ export default {
 </script>
 
 <template>
-    <h1>Hello</h1>
+    <div class="mt-2">
+        <h3>Recently Added</h3>
+    </div>
+    <div class="mt-2">
+        <h3>Most Popular</h3>
+    </div>
 </template>

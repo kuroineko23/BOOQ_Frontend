@@ -10,5 +10,5 @@ export default {
 </script>
 
 <template>
-    <h1>Hello</h1>
+    <h2>Recently Added Book</h2>
 </template>

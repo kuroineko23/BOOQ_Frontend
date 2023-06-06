@@ -56,9 +56,9 @@ export default {
                     <button @click="navigate" class="btn btn-secondary w-100">Register</button>
                 </RouterLink>
             </div>
-            <div>
-                <RouterLink to="/forget">Forget Password?</RouterLink>
-            </div>
+            <!-- <div>
+                    <RouterLink to="/forget">Forget Password?</RouterLink>
+                </div> -->
         </form>
     </div>
 </template>

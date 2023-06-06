@@ -17,6 +17,10 @@
   height: 80vh;
   max-width: 100%;
   display: grid;
+  padding-left: 12px;
+}
+
+#main:has(form){
   place-items: center;
 }
 
@@ -26,8 +30,4 @@
 
 form{
   min-width: 20vw;
-}
-
-h1{
-  text-align: center;
 }
